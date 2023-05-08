@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
-*/
+
 
 use App\Http\Controllers\HomeController;
 Route::controller(HomeController::class)->middleware('auth')->group(function() {
@@ -57,7 +57,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 */
 
 use App\Http\Controllers\ScheduleController as PublicScheduleController1;
-Route::get('/', [PublicScheduleController1::class, 'index'])->name('schedule.index');
+//Route::get('/', [PublicScheduleController1::class, 'index'])->name('schedule.index');
 
 use App\Http\Controllers\BalanceController as PublicBalanceController1;
-Route::get('/', [PublicBalanceController1::class, 'index'])->name('balance.index');
+//Route::get('/', [PublicBalanceController1::class, 'index'])->name('balance.index');
